@@ -1,5 +1,4 @@
-"use client";
-
+import React from "react"; 
 import { useThemeContext } from "../context/ThemeContext";
 import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
