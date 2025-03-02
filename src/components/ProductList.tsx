@@ -2,7 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import ProductItem from "./ProductItem";
-import { Box, Grid, MenuItem, Select, Typography } from "@mui/material";
+import { Box, MenuItem, Select, Typography } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 
 interface Product {
   id: number;
@@ -16,7 +17,9 @@ const ProductList: React.FC = () => {
   const [category, setCategory] = useState<string>("");
 
   const fetchProducts = async (selectedCategory: string) => {
-    const url = selectedCategory ? `/api/products?category=${selectedCategory}` : "/api/products";
+    const url = selectedCategory
+      ? `/api/products?category=${selectedCategory}`
+      : "/api/products";
     console.log("🌍 请求 API:", url); // 👈 这里加 log 看看请求的 URL 是否变化
     const res = await fetch(url, { cache: "no-store" });
     const data = await res.json();
@@ -49,7 +52,7 @@ const ProductList: React.FC = () => {
       <Grid container spacing={2}>
         {products.length > 0 ? (
           products.map((product) => (
-            <Grid item xs={12} sm={6} md={4} key={product.id}>
+            <Grid size={{ xs: 12, sm: 6 }} key={product.id}>
               <ProductItem {...product} />
             </Grid>
           ))
