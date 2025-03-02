@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Documentation
 
-## Getting Started
+## Solution Integrity
+The project aims to provide a complete and functional solution for managing and displaying products in an e-commerce setting. The key functionalities include:
+- **Product Listing Page**: Fetching and displaying products dynamically, with filtering by category.
+- **Product Detail Page**: Fetching and displaying a single product’s details based on the selected product.
+- **Navigation & Routing**: Implementing Next.js dynamic routes for smooth navigation between product listings and detail pages.
+- **Testing Coverage**: Comprehensive testing using **Jest** for unit tests and **Cypress** for end-to-end (E2E) testing.
 
-First, run the development server:
+Despite some challenges encountered during testing, the solution ensures proper API handling, UI responsiveness, and error handling mechanisms to maintain solution integrity.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Design Considerations
+### Functionality
+- **Next.js Framework**: Utilized for server-side rendering (SSR) and static site generation (SSG) where appropriate.
+- **React Functional Components**: The project follows modern React practices with hooks (`useState`, `useEffect`, and `useRouter`).
+- **Material-UI**: Used for styling and layout consistency, providing an accessible and scalable design.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Readability & Maintainability
+- **Component-Based Structure**: Encapsulation of logic into separate React components for better reusability.
+- **Consistent Code Formatting**: Enforced with ESLint and Prettier to maintain readable and structured code.
+- **API Abstraction**: API requests are abstracted into a separate module (`api.ts`), allowing easier modifications and scalability.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Extendability
+- **Modular Architecture**: The structure allows for easy addition of new features, such as user authentication, cart functionality, or payment integration.
+- **Dynamic Routing**: The project supports future expansion by utilizing Next.js’s file-based routing.
+- **Test Scalability**: The testing framework is designed to accommodate additional components and functionalities as they evolve.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Testability
+The project employs a robust testing strategy to ensure functionality and prevent regressions:
 
-## Learn More
+### Unit Testing (Jest & React Testing Library)
+- **Component Tests**: Ensures each component behaves as expected.
+- **API Tests**: Verifies API fetch functions return correct data.
+- **Mocking**: API responses are mocked using `jest.fn()` to avoid network dependencies.
 
-To learn more about Next.js, take a look at the following resources:
+### End-to-End Testing (Cypress)
+- **Navigation Tests**: Ensures users can navigate between pages.
+- **UI Interaction Tests**: Verifies user interactions, such as clicking on product cards.
+- **Error Handling**: Tests cases where the API returns failures.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Conclusion
+This project demonstrates a well-structured and scalable Next.js application with effective design patterns, robust test coverage, and a focus on maintainability. Future enhancements could include caching strategies, improved API error handling, and performance optimizations.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
